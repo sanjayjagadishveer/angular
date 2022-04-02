@@ -1,0 +1,10 @@
+<h2>My Collegues</h2>
+<ul class="collegue">
+  <li *ngFor="let col of collegue">
+ 
+      <span class="badge">{{col.firstname}}</span>
+      <span class="name" (click)="addCol(col)">{{col.lastname}}</span>
+   
+  </li>
+</ul>
+

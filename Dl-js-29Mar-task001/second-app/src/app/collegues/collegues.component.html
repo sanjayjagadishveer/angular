@@ -1,0 +1,65 @@
+
+<!--Attributes-->
+<h2>
+  <input type="text" [id]="name" value="sanjay">
+  <input type="text" disabled id="{{name}}" value="sanjay">
+  <input type="text"  [disabled]="false"  [id]="name" value="sanjay">
+  <input type="text"  [disabled]="true"  [id]="name" value="sanjay">
+
+</h2>
+
+<!--class binding-->
+<h2 class="text-success">Class binding</h2>
+<h2 [class.text-danger]="success">Class binding</h2>
+<!--style binding -->
+<h2 [style.color]="'orange'">Style binding</h2>
+<h2 [style.color]="highlight">Style binding</h2>
+<h2 [ngStyle]="stylebind">Style binding</h2>
+<!--Event binding-->
+<button (click)="onClick($event)">Submit</button>
+{{greeting}}
+<button (click)="greeting='hello world'">Submit</button>
+
+<!--template refrence-->
+<input type="text" #myinput>
+<button (click)="log(myinput)">Log</button>
+
+<!--Two way binding-->
+<div>
+  <label for="name">Hero name: </label>
+  <input id="name" [(ngModel)]="hero.name" placeholder="name">
+</div>
+
+<!--ngif-->
+
+<h2 *ngIf="true"> Code1</h2>
+<h3 *ngIf="displayname">Code2</h3>
+
+<!--ng switch-->
+<div [ngSwitch]="color">
+  <div *ngSwitchCase="'red'">Red </div>
+  <div *ngSwitchCase="'blue'">Blue </div>
+  <div *ngSwitchCase="'green'">Green </div>
+</div>
+<!--ng for-->
+<div *ngFor="let info of data;index as i">
+  <h2>{{i}}{{info}}</h2>
+
+</div>
+
+<!--pipes-->
+<h2>{{name | uppercase}}</h2>
+<h2>{{name | lowercase}}</h2>
+<h2>{{name | titlecase}}</h2>
+<h2>{{name | slice:1:2}}</h2>
+<h2>{{0.25 | percent}}</h2>
+<h2>{{5.678 | currency}}</h2>
+<h2>{{5.678 | currency:'EUR':'code'}}</h2>
+<h2>{{date}}</h2>
+<h2>{{date | date:'short'}}</h2>
+<h2>{{date | date:'shortDate'}}</h2>
+<h2>{{date | date:'shortTime'}}</h2>
+
+
+
+
